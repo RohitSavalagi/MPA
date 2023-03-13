@@ -15,7 +15,7 @@ export class AppComponent {
     @HostBinding("class.app")
     public _hostClass: boolean = true;
 
-    public title: string = `ux-ng2 Project Template A ${VERSION.major}`;
+    public title: string = `Project Template A ${VERSION.major}`;
 
     public _click(): void {
     }
