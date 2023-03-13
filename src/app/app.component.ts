@@ -10,5 +10,5 @@ import {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-    title = "features-tester";
+    title: boolean = "features-tester";
 }
