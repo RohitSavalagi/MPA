@@ -1,3 +1,3 @@
-# order-entry-portal
+# boilerplate
 
 Sandbox for new technologies and approaches

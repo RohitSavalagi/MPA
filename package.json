@@ -1,5 +1,5 @@
 {
-  "name": "@netcracker/order-entry-portal",
+  "name": "@netcracker/boilerplate",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "hmr": "ng serve --hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "serve-dist": "lite-server --baseDir=\"dist/order-entry-portal/\"",
+    "serve-dist": "lite-server --baseDir=\"dist/boilerplate/\"",
     "test": "ng test",
     "svg": "gulp svg -f ./config/gulpfile.js",
     "e2e": "ng e2e",
@@ -15,7 +15,7 @@
     "lint:fix": "eslint ./src --ext .ts,.tsx,.js,.jsx --fix",
     "stylelint": "stylelint \"src/**/*.less\" --custom-syntax postcss-less",
     "stylelint:fix": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
-    "report": "webpack-bundle-analyzer dist/order-entry-portal/stats.json",
+    "report": "webpack-bundle-analyzer dist/boilerplate/stats.json",
     "precommit": "lint-staged --no-stash"
   },
   "private": true,
