@@ -116,7 +116,6 @@
       }
     }
   },
-  "defaultProject": "features-tester",
   "cli": {
     "analytics": false
   }
