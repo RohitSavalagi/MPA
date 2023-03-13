@@ -7,7 +7,7 @@ import {
     selector: "ft-root",
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.css"],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
     title: boolean = "features-tester";
