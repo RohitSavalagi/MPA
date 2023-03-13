@@ -1,6 +1,7 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "strict": true,
         "baseUrl": "./",
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
@@ -25,7 +26,12 @@
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
-        "strictInjectionParameters": true
+        "strictInjectionParameters": true,
+        "strictPropertyInitialization": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true
     },
     "exclude": [
         "config/gulpfile.js"

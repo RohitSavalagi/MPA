@@ -23,7 +23,7 @@ import { AppComponent } from "./app.component";
     ],
     providers: [
         HammerGestureConfig,
-        // fix hammerjs bugs
+        // Fix hammerjs bugs
         {
             provide: EVENT_MANAGER_PLUGINS,
             useClass: UxHammerPluginPatchA6,

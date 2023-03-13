@@ -169,6 +169,8 @@ module.exports = {
                         "code": 350
                     }
                 ],
+                "no-unused-vars": "error",
+                "no-undef": "error",
                 "no-bitwise": "error",
                 "no-caller": "error",
                 "no-console": [

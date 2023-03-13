@@ -2,7 +2,7 @@ import {
     ChangeDetectionStrategy,
     Component,
     Input,
-    OnChanges,
+    OnChanges
 } from "@angular/core";
 
 import { IconService } from "./icon.service";
@@ -11,23 +11,28 @@ import { IconService } from "./icon.service";
     selector: "oe-icon",
     templateUrl: "./icon.component.html",
     styleUrls: ["./icon.component.less"],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements OnChanges {
     @Input()
     public src: string = "";
+
     @Input()
     public title: string = "";
+
     @Input()
     public width: string = "100%";
+
     @Input()
     public height?: string;
+
     @Input()
-    public className: string = "";
+    public  className: string = "";
+
     @Input()
     public preserveAspectRatio: string = "xMinYMax meet";
 
-    constructor(private iconSpriteService: IconService) {
+    constructor(private readonly iconSpriteService: IconService) {
     }
 
     ngOnChanges(): void {
