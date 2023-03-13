@@ -12,7 +12,7 @@ import {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-    @HostBinding("class.app") public _hostClass: boolean = true;
+    @HostBinding("class.app") public _hostClass: string = true;
 
     public title: string = "ux-ng2 Project Template A" + VERSION.major;
 
