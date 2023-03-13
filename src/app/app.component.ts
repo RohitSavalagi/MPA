@@ -1,14 +1,22 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    HostBinding,
+    VERSION
 } from "@angular/core";
 
 @Component({
-    selector: "ft-root",
+    selector: "oe-root",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ["./app.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-    title: boolean = "features-tester";
+    @HostBinding("class.app") public _hostClass: boolean = true;
+
+    public title: string = "ux-ng2 Project Template A" + VERSION.major;
+
+    public _click(): void {
+        window.alert("hello");
+    }
 }

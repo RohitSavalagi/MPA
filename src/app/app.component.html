@@ -1,1 +1,19 @@
-<h1>Welcome to {{ title }}</h1>
+<!--The content below is only a placeholder and should be replaced.-->
+<div class="app">
+    <div style="text-align: center">
+        <h1 class="app__title">Welcome to {{ title }}</h1>
+    </div>
+
+    <h3 class="app__subtitle">Component Usage</h3>
+    <ux-button
+        text="Hello UX-NG2!"
+        (onClick)="_click()"
+    ></ux-button>
+
+    <h3 class="app__subtitle">Icon Usage</h3>
+    <oe-icon
+        class="icon-cross"
+        width="18"
+        src="cross"
+    ></oe-icon>
+</div>

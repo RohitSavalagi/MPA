@@ -1,3 +1,4 @@
-export const environment = {
+export const environment: Record<string, boolean> = {
     production: true,
+    hmr: false
 };

@@ -1,0 +1,36 @@
+{
+    "ignoreFiles": [
+        "**/*.svg"
+    ],
+    "rules": {
+        "max-line-length": [
+            140,
+            {
+                "severity": "warning"
+            }
+        ],
+        "string-quotes": "double",
+        "indentation": 4,
+        "max-nesting-depth": 4,
+        "selector-class-pattern": null,
+        "declaration-colon-newline-after": null,
+        "function-parentheses-space-inside": null,
+        "order/properties-alphabetical-order": null,
+        "function-parentheses-newline-inside": null,
+        "less/no-duplicate-variables": null,
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": [
+                    "ng-deep"
+                ]
+            }
+        ],
+        "no-invalid-position-at-import-rule": null
+    },
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended-less",
+        "stylelint-config-idiomatic-order"
+    ]
+}
