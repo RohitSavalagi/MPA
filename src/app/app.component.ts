@@ -17,6 +17,6 @@ export class AppComponent {
 
     public title: string = `Project Template A ${VERSION.major}`;
 
-    public _click(): void {
+    public _click() {
     }
 }
