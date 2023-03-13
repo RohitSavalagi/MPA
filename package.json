@@ -16,7 +16,8 @@
     "stylelint": "stylelint \"src/**/*.less\" --custom-syntax postcss-less",
     "stylelint:fix": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
     "report": "webpack-bundle-analyzer dist/boilerplate/stats.json",
-    "precommit": "lint-staged --no-stash"
+    "precommit": "lint-staged --no-stash",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
