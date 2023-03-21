@@ -1,0 +1,157 @@
+<main class="contract">
+    <div class="contract__action-icons">
+        <div class="controls">
+            <a (click)="openPopup()">
+                <oe-icon class="icon-cross" width="15" src="plus"></oe-icon>
+            </a>
+            <oe-icon class="icon-cross" width="15" src="search"></oe-icon>
+            <oe-icon class="icon-cross" width="15" src="sort"></oe-icon>
+            <oe-icon class="icon-cross" width="15" src="filter"></oe-icon>
+        </div>
+    </div>
+    <div class="contracts__wrapper">
+        <div class="product__contract" *ngFor="let contract of contracts">
+            <div class="contract__header">
+                <h3 class="contract__title">{{ contract.title }}</h3>
+                <p
+                    class="contract__status contract__status--{{
+                        contract.status
+                    }}"
+                >
+                    {{ contract.status }}
+                </p>
+            </div>
+            <div class="contract__details">
+                <div class="contract__item">
+                    <label class="contract__label">Company</label>
+                    <p class="contract__company">{{ contract.company }}</p>
+                </div>
+                <div class="contract__item">
+                    <label class="contract__label">Location</label>
+                    <p class="contract__company">{{ contract.location }}</p>
+                </div>
+                <div class="contract__item">
+                    <label class="contract__label">Contract</label>
+                    <a
+                        href="{{ '#' }}"
+                        class="contract__company contract__link contract__link--{{
+                            contract.status
+                        }}"
+                        >{{ contract.contract }}</a
+                    >
+                </div>
+                <div class="contract__item">
+                    <label class="contract__label">Assignee</label>
+                    <a
+                        href="{{ '#' }}"
+                        class="contract__company contract__link contract__link--{{
+                            contract.status
+                        }}"
+                        >{{ contract.assignee }}</a
+                    >
+                </div>
+                <div class="contract__footer">
+                    <img
+                        class="contract__handler"
+                        src="{{ contract.avatar }}"
+                        alt="asdfasdf"
+                    />
+                    <p class="contract__company contract__link">
+                        {{ contract.handler }}
+                    </p>
+                    <div class="contract__more-icon">
+                        <oe-icon
+                            class="icon-cross popup__close-icon-svg"
+                            width="18"
+                            src="more"
+                        ></oe-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<section class="popup">
+    <form action="" class="form container">
+        <div class="popup__header">
+            <h1 class="popup__name">Contracts / New Contract</h1>
+            <div class="popup__action-btn">
+                <button
+                    class="popup__btn btn btn__cancel"
+                    type="button"
+                    (click)="cancel()"
+                >
+                    Cancel
+                    <oe-icon
+                        class="icon-cross popup__close-icon-svg"
+                        width="18"
+                        src="cancel"
+                    ></oe-icon>
+                </button>
+                <button class="popup__btn btn btn__save" type="button">
+                    Save
+                    <oe-icon
+                        class="icon-cross popup__save-icon-svg"
+                        width="18"
+                        src="save"
+                    ></oe-icon>
+                </button>
+            </div>
+        </div>
+        <div class="form__element-wrapper">
+            <input
+                type="text"
+                class="form__input"
+                required
+                placeholder="Contract Name"
+            />
+        </div>
+        <div class="form__element-wrapper">
+            <input
+                type="text"
+                class="form__input"
+                required
+                placeholder="Company Name"
+            />
+            <oe-icon
+                class="icon-cross form__logo form__logo--location"
+                width="20"
+                src="down-arrow"
+            ></oe-icon>
+        </div>
+        <div class="form__element-wrapper">
+            <input
+                type="text"
+                class="form__input"
+                required
+                placeholder="Address"
+            />
+            <oe-icon
+                class="icon-cross form__logo form__logo--location"
+                width="20"
+                src="location"
+            ></oe-icon>
+        </div>
+        <div class="form__element-wrapper">
+            <input
+                type="text"
+                class="form__input"
+                required
+                placeholder="Conditions"
+            />
+        </div>
+        <div class="form__element-wrapper">
+            <input
+                type="text"
+                class="form__input"
+                required
+                placeholder="Assignee"
+            />
+            <oe-icon
+                class="icon-cross form__logo form__logo--location"
+                width="20"
+                src="down-arrow"
+            ></oe-icon>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,124 @@
+html {
+    margin: 0 auto;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.register {
+    display: flex;
+    flex-grow: 1;
+}
+
+.register__logo-img {
+    width: 56px;
+    height: 36px;
+    fill: #fff;
+}
+
+.register__logo-wrapper {
+    min-height: 100vh;
+    flex-basis: 65.33%;
+    padding: 30px;
+    background: url("./../../../assets/images/icons/Rectangle 16login.png");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register__logo-text {
+    display: inline;
+    margin-left: 15px;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.register__form-wrapper {
+    position: relative;
+    flex-grow: 1;
+    background-color: #fff;
+}
+
+.register__context {
+    margin-top: 32px;
+    margin-right: 32px;
+    color: #3498db;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.register__form {
+    position: absolute;
+    top: 50%;
+    max-width: 300px;
+    margin-left: 5%;
+    transform: translateY(-50%);
+}
+
+.register__header {
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.register__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+}
+
+.register__label {
+    color: #7f8c8d;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.register__input-feild {
+    padding: 5px;
+    border-style: none;
+    border-bottom: 1px solid #bdc3c7;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    outline: none;
+}
+
+.register__btn {
+    display: block;
+    padding: 5px 10%;
+    border: 1px solid #2980b9;
+    margin: 20px auto;
+    background: #3498db;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgb(52 152 219 / 30%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.register__other-ways {
+    margin-top: 20px;
+    color: #4c5862;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 20px;
+    text-align: center;
+}
+
+.link {
+    color: #3498db;
+}
+
+.register__btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}

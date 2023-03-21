@@ -1,0 +1,89 @@
+<!-- eslint-disable max-len -->
+<main class="dashboard">
+    <section class="dashboard__over-view">
+        <div class="progress">
+            <div class="progess__header">
+                <p class="progress__text"><span class="progess__completed">{{completed}}</span> task completed out of <span class="progess__total">{{initialData.length}}</span></p>
+                <p class="pogress__show">Show: <span class="progess__week" (click)="toggleWeek()">This Week</span><span class="progess__week-pop-up">This Week</span></p>
+            </div>
+            <progress value="3" max="10"></progress>
+        </div>
+        <div class="dashboard__date-feild">
+            <div class="dashboard__current-date">
+                23 December, Sunday
+            </div>
+            <div class="dashboard__week">
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Sun</div>
+                    <div class="dashboard__day-num dashboard__day-num--active">23</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Mon</div>
+                    <div class="dashboard__day-num">24</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Tue</div>
+                    <div class="dashboard__day-num">25</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Wed</div>
+                    <div class="dashboard__day-num">26</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Thu</div>
+                    <div class="dashboard__day-num">27</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Fri</div>
+                    <div class="dashboard__day-num">28</div>
+                </div>
+                <div class="dashboard__date">
+                    <div class="dashboard__day-name">Sat</div>
+                    <div class="dashboard__day-num">29</div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__items">
+            <div class="dashboard__item" *ngFor="let task of data">
+                <div class="dashboard__title">
+                    <h1 class="dashboard__title-text">{{task.task}} ( {{task.items}} items)</h1>
+                    <p class="dashboard__status dashboard__status--{{task.status}}">{{task.status}}</p>
+                  </div>
+                  <p class="dashboard__location">Location: {{task.location}}</p>
+                  <div class="dashboard__footer">
+                    <img class="dashboard__handler-photo" src="./../../../assets/images/icons/image 3.svg" alt="asd">
+                    <p class="dashboard__person">{{task.name}}</p>
+                    <svg class="dashboard__more-logo" width="16" height="4">
+                      <use xlink:href="#threedots"></use>
+                    </svg>
+                  </div>
+            </div>
+            
+        </div>
+        <div class="btn__wrapper">
+            <button class="dashboard__btn btn" type="button" (click)="showMore()">Show More</button>
+        </div>
+    </section>
+    <section class="dashboard__visual-graphs">
+        <div class="dashboard__graphic">
+            <div class="dashboard__graphic-header">
+                <h3 class="dashboard__heading">Deals</h3>
+                <p class="dashboard__graphic-timeline">Show: 
+                    <a class="dashboard__graphic-link" (click)="toggleMonth()" >Monthly</a> 
+                    <span class="dashboard__pop-up">Monthly</span> 
+                </p>
+            </div>
+            <img class="dashboard__img" src="./../../../assets/images/icons/deals_graphic.svg" alt="">
+        </div>
+        <div class="dashboard__graphic">
+            <div class="dashboard__graphic-header">
+                <h3 class="dashboard__heading">Tasks</h3>
+                <p class="dashboard__graphic-timeline">Show: 
+                    <a class="dashboard__pie-chart" (click)="toggleMonthPieChart()">Monthly</a> 
+                    <span class="dashboard__pie-chart__pop-up">Monthly</span> 
+                </p>
+            </div>
+            <img class="piechart__img" src="./../../../assets/images/icons/piechart.JPG" alt="">
+        </div>
+    </section>
+</main>

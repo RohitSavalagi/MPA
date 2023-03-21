@@ -1,6 +1,15 @@
-:host {
-    use,
-    svg {
-        fill: currentcolor;
-    }
+svg {
+    cursor: pointer;
+}
+
+svg:hover use {
+    fill: #109cf1;
+}
+
+::ng-deep a.active use {
+    fill: #109cf1;
+}
+
+::ng-deep .sidebar__item:hover use {
+    fill: #109cf1;
 }

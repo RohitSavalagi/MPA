@@ -23,7 +23,7 @@ module.exports = {
                 "eslint-plugin-import",
                 "@typescript-eslint",
                 "import",
-                "modules-newline"
+                "@spence1115/modules-newlines"
             ],
             extends: [
                 "eslint:recommended",
@@ -42,8 +42,10 @@ module.exports = {
                         "ExportDeclaration": { "multiline": true, "minProperties": 2 }
                     }
                 ],
-                "modules-newline/import-declaration-newline": "error",
-                "modules-newline/export-declaration-newline": "error",
+                "@spence1115/modules-newlines/import-declaration-newline": [ 0, {
+                    "nodeSpecifersLength": 2 
+                }],
+                "@spence1115/modules-newline/export-declaration-newline": 0,
                 "import/no-unresolved": "off",
                 "import/named": "warn",
                 "import/namespace": "warn",

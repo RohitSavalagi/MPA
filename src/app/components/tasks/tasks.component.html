@@ -1,0 +1,61 @@
+<main class="task">
+    <div class="task__main-header">
+        <h1></h1>
+        <div class="task__controls">
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="plus"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="search"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="sort"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="filter"
+            ></oe-icon>
+        </div>
+    </div>
+    <div class="task__items">
+        <div class="task__item" *ngFor="let ele of tasks">
+            <div class="task__header">
+              <h1 class="task__heading">{{ele.title}}</h1>
+              <p class="task__status task__status--{{ele.status}}" title="{{ele.status}}">{{ele.status}}</p>
+            </div>
+            <div class="task__due-date-wrapper">
+              <h1 class="task__due-date-label">Due Date</h1>
+              <p class="task__due-date-date">{{ele.duedate}}</p>
+            </div>
+            <div class="task__item-wrapper">
+              <h1 class="task__item-label">Items</h1>
+              <ul class="task__elements"  >
+                <li class="tasks__list-itmes" *ngFor="let i of ele.items">{{i}}</li>
+              </ul>
+            </div>
+            <div class="task__location-wrapper">
+              <h1 class="task__location-label">Location</h1>
+              <p class="task__location-of-item">{{ele.location}}</p>
+            </div>
+            <div class="task__footer-wrapper">
+              <img class="task__footer-img" src="{{ele.avatar}}"  alt="avatar"/>
+              <p class="task__handler">{{ele.handler}}</p>
+              <div class="task__more-icon">
+                <oe-icon
+                  class="icon-cross popup__close-icon-svg"
+                  width="18"
+                  src="more"
+                ></oe-icon>
+              </div>
+            </div>
+          </div>
+    </div>
+</main>
+

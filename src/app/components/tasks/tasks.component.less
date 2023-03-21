@@ -1,0 +1,162 @@
+.task__controls {
+    display: flex;
+    gap: 8px;
+    justify-self: end;
+}
+
+.task__main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3%;
+    margin-bottom: 15px;
+}
+
+.task__items {
+    display: grid;
+    padding: 10px 3%;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+    transition: margin-left 0.3s;
+}
+
+.task--sidebar-open {
+    margin-left: 70px;
+    transition: margin-left 0.3s;
+}
+
+.task__status {
+    overflow: hidden;
+    padding: 5px 10px;
+    margin: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.task__status:hover {
+    filter: brightness(1.3);
+}
+
+.task__status--cancelled {
+    background-color: rgb(255 78 78);
+}
+
+.task__status--completed {
+    background-color: #2ecc71;
+}
+
+.task__status--progress {
+    background-color: #f39c12;
+}
+
+.task__status--progress::before {
+    background-color: #f39c12;
+    content: "In ";
+}
+
+.task__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px 0 #00000014;
+    font-size: 13px;
+    font-weight: 400;
+    gap: 10px;
+    letter-spacing: 0.01em;
+    line-height: 20px;
+}
+
+.task__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task__heading {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 23px;
+}
+
+.task__status--not-started {
+    background-color: #9e9e9e;
+    color: #fff;
+}
+
+.task__due-date-wrapper,
+.task__item-wrapper,
+.task__location-wrapper {
+    color: #7f8c8d;
+}
+
+li {
+    color: #7f8c8d;
+    list-style: disc;
+}
+
+.task__due-date-wrapper,
+.task__location-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.task__item-wrapper {
+    display: flex;
+    gap: 72px;
+}
+
+.task__due-date-label,
+.task__item-label,
+.task__location-label {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 20px;
+    opacity: 0.5;
+}
+
+.task__due-date-date,
+.task__location {
+    margin: 0;
+}
+
+.tasks__list-itmes {
+    margin-bottom: 7px;
+}
+
+.tasks__list-itmes:last-of-type {
+    margin: 0;
+}
+
+.task__footer-wrapper {
+    display: grid;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: auto auto 1fr;
+}
+
+.task__footer-img {
+    border-radius: 50%;
+}
+
+.task__handler {
+    color: #7f8c8d;
+}
+
+.task__more-icon {
+    justify-self: end;
+}

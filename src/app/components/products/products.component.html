@@ -1,0 +1,62 @@
+<main class="products">
+    <div class="carousel">
+        <ul class="carousel__list" data-target="carousel">
+          <li class="carousel__card" data-target="card">
+            <img src="https://th.bing.com/th/id/OIP.Y5Ygai29oo36dlek7s7TdQHaE7?w=258&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="">
+          </li>
+          <li class="carousel__card" data-target="card">
+            <img src="https://th.bing.com/th/id/OIP.8CZ_Lp7b114ltRXFhSiePwHaE8?pid=ImgDet&rs=1" alt="">
+          </li>
+          <li class="carousel__card" data-target="card">
+            <img src="https://iso.500px.com/wp-content/uploads/2015/06/smartphone_cover1-1500x875.jpeg" alt="">
+          </li>
+        </ul>
+        <div class="carousel-toolbar">
+          <button class="btn carousel__btn carousel__btn--left" data-action="slideLeft" (click)="leftButtonClick()">
+            <oe-icon
+            class="icon-cross btn__icon--left"
+            width="18"
+            src="right-arrow"
+        ></oe-icon>
+          </button>
+          <button class="btn carousel__btn carousel__btn--right" data-action="slideRight" (click)="rightButtonClick()">
+            <oe-icon
+            class="icon-cross btn__icon--right"
+            width="18"
+            src="right-arrow"
+        ></oe-icon>
+          </button>
+        </div>
+      </div>
+    <div class="product__header">
+        <h1 class="product__heading">Products</h1>
+        <div class="product__action-logos">
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="plus"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="search"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="sort"
+            ></oe-icon>
+            <oe-icon
+                class="icon-cross"
+                width="15"
+                src="filter"
+            ></oe-icon>
+        </div>
+    </div>
+    <div class="product__categories">
+      <a class="products__item-wrapper" *ngFor="let item of items">
+        <img class="products__img" src="./../../../assets/images/icons/{{item.img}}" alt="image">
+        <h1>{{item.category}}</h1>
+      </a>
+    </div>
+</main>

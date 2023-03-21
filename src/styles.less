@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/styles/common/index.less";
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap";
 
 /*
 This syntax works because in angular.json options we set:
@@ -11,6 +12,20 @@ Otherwise, you would need to import styles by the path:
 /node_modules/@netcracker/ux-ng2/assets/styles/components/button/button.component.less
 */
 @import "@netcracker/ux-ng2/assets/styles/components/button/button.component.less";
+// @import "./app/components/dashboard/dashboard.component.less";
 
 // You could alternatively import all ux-ng2 styles like this:
 // @import '@netcracker/ux-ng2/assets/styles/main.less';
+
+html,
+body {
+    background: #e5e5e5;
+}
+
+.svg__hidden {
+    display: none;
+}
+
+svg {
+    fill: #7f8c8d;
+}

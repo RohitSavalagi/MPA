@@ -1,0 +1,44 @@
+<!-- eslint-disable max-len -->
+<section class="register">
+    <div class="register__logo-wrapper">
+        <svg class="svg register__logo-img">
+            <use xlink:href="#netcracker__logo"></use>
+        </svg>
+        <h1 class="register__logo-text">Cloud BSS</h1>
+    </div>
+    <div class="register__form-wrapper">
+        <h1 class="register__context">Feature Tester</h1>
+        <form action="" class="register__form">
+            <h1 class="register__header">Register</h1>
+            <div class="register__wrapper">
+                <label class="register__label" for="email">Email</label>
+                <input type="email" id="email" class="register__input-feild">
+            </div>
+            <div class="register__wrapper">
+                <label class="register__label" for="name">Name</label>
+                <input type="text" id="name" class="register__input-feild">
+            </div>
+            <div class="register__wrapper">
+                <label class="register__label" for="surname">Surname</label>
+                <input type="text" id="surname" class="register__input-feild">
+            </div>
+            <div class="register__wrapper">
+                <label class="register__label" for="user-name">User Name</label>
+                <input type="text" id="user-name" class="register__input-feild">
+            </div>
+            <div class="register__wrapper">
+                <label class="register__label" for="password">Password</label>
+                <input type="password" id="password" class="register__input-feild">
+            </div>
+            <div class="register__wrapper">
+                <label class="register__label" for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" class="register__input-feild">
+            </div>
+            <button type="submit" class="btn register__btn" routerLink="/sidebar/dashboard">Submit</button>
+            <div class="register__other-ways">
+                <p class="register__reset">Forgot your password? <a href="#" class="register__reset-link link"> Reset it.</a></p>
+                <p class="login__register">Alredy have an account? Log In? <a routerLink="login" class="login__register-link link" routerLink="/login">Login now!</a></p>
+            </div>
+        </form>
+    </div>
+</section>

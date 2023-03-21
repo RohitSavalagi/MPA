@@ -1,0 +1,76 @@
+<header class="header">
+    <h1 class="header__logo">Feature Tester</h1>
+    <div class="header__action-items">
+        <oe-icon
+            class="icon-cross header__icon--notification"
+            width="18"
+            src="notification"
+        ></oe-icon>
+        <img class="header__action-item header__avatar" src="./../../../assets/images/icons/Avatar Profile.png" alt="Avatar">
+    </div>
+</header>
+
+<aside class="sidebar__base">
+
+</aside>
+
+<aside class="sidebar">
+    <h1 class="sidebar__logo">Feature Tester</h1>
+    <div class="sidebar__tab-navigation">
+        <a href="#" class="sidebar__item" [routerLink]="'dashboard'" routerLinkActive="active">
+            <oe-icon
+                class="icon-cross"
+                width="18"
+                src="dashboard"
+                [routerLink]="'dashboard'"
+                routerLinkActive="active"
+            ></oe-icon>
+            <p class="sidebar__text">Dashbord</p>
+        </a>
+        <a class="sidebar__item" [routerLink]="'tasks'" routerLinkActive="active">
+            <oe-icon
+                class="icon-cross"
+                width="18"
+                src="tasks"
+            ></oe-icon>
+            <p class="sidebar__text">Tasks</p>
+        </a>
+        <a href="products.html" class="sidebar__item" [routerLink]="'products'" routerLinkActive="active">
+            <oe-icon
+                class="icon-cross"
+                width="18"
+                src="products"
+            ></oe-icon>
+            <p class="sidebar__text">Products</p>
+        </a>
+        <a href="#" class="sidebar__item" [routerLink]="'contracts'" routerLinkActive="active">
+            <oe-icon
+                class="icon-cross"
+                width="18"
+                src="contracts"
+            ></oe-icon>
+            <p class="sidebar__text">contracts</p>
+        </a>
+    </div>
+    <div class="sidebar__bottom-items">
+        <a href="#" class="sidebar__item">
+            <oe-icon
+                class="icon-cross"
+                width="18"
+                src="logout"
+            ></oe-icon>
+            <p class="sidebar__text">Logout</p>
+        </a>
+        <a class="sidebar__item sidebar__svg--toggle" (click)="sidebarToggle()">
+            <oe-icon
+                class="sidebar__svg sidebar__rotate"
+                width="18"
+                src="right-arrow"
+            ></oe-icon>
+            <p class="sidebar__text sidebar__text--toggle">Toggle Sidebar</p>
+        </a>
+    </div>
+</aside>
+
+
+<router-outlet></router-outlet>
