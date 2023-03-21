@@ -11,18 +11,17 @@
         </div>
         <div class="login__form-wrapper">
             <h1 class="login__context">Feature Tester</h1>
-            <form  class="login__form" #form="ngForm">
-                {{form.valid}}
+            <form  class="login__form" #form="ngForm" [formGroup]="loginForm">
                 <h1 class="login__header">Login</h1>
                 <div class="login__wrapper">
                     <label class="login__label" for="name">User Name</label>
-                    <input type="text" id="name" class="login__input-feild" required>
+                    <input type="text" id="name" class="login__input-feild" required formControlName="name">
                 </div>
                 <div class="login__wrapper">
                     <label class="login__label" for="password">Password</label>
-                    <input type="password" id="password" class="login__input-feild" required>
+                    <input type="password" id="password" class="login__input-feild" required formControlName="password">
                 </div>
-                <button type="submit" class="btn login__btn" routerLink="/sidebar/dashboard" [disabled]="'form.valid'">Submit</button>
+                <button type="submit" class="btn login__btn" routerLink="/sidebar/dashboard" [disabled]="loginForm?.invalid">Submit</button>
                 <div class="login__other-ways">
                     <p class="login__reset">Forgot your password? <a href="#" class="login__reset-link link"> Reset it.</a></p>
                     <p class="login__register">Don’t have an account? <a [routerLink]="'/registration'" class="login__register-link link">Register now!</a></p>
