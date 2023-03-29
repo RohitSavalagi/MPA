@@ -1,4 +1,5 @@
 import { DOCUMENT } from "@angular/common";
+import { HttpClient } from "@angular/common/http";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -7,6 +8,7 @@ import {
 } from "@angular/core";
 import { Dashboard } from "@core/models/dashboard.model";
 import { DashboardService } from "@core/services/dashboard.service";
+
 
 @Component({
     selector: "oe-dashboard",
@@ -22,13 +24,18 @@ export class DashboardComponent implements OnInit {
 
     constructor(
         private dashboard: DashboardService,
-        @Inject(DOCUMENT) private document: Document
+        @Inject(DOCUMENT) private document: Document,
+        private http: HttpClient
     ) {}
 
     ngOnInit(): void {
-        this.data = this.dashboard.getData().slice(0, 2);
-        this.initialData = this.dashboard.getData();
-        this.dataExtraction();
+
+        this.http.get<Dashboard[]>("../../../assets/dashboard_tasks.json").subscribe((res: Dashboard[]) => {
+            this.initialData = res;
+            this.data = res.slice(0, 2);
+            this.dataExtraction();
+        });
+
     }
 
     showMore(): void {

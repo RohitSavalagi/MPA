@@ -1,40 +1,76 @@
 <!-- eslint-disable max-len -->
 <section class="register">
     <div class="register__logo-wrapper">
-        <svg class="svg register__logo-img">
-            <use xlink:href="#netcracker__logo"></use>
-        </svg>
+        <oe-icon
+            class="icon-cross"
+            width="56"
+            height="36"
+            src="netcracker__logo"
+        ></oe-icon>
         <h1 class="register__logo-text">Cloud BSS</h1>
     </div>
     <div class="register__form-wrapper">
         <h1 class="register__context">Feature Tester</h1>
-        <form action="" class="register__form">
+        <form action="" class="register__form"  #form="ngForm" (ngSubmit)="onSubmit()">
             <h1 class="register__header">Register</h1>
             <div class="register__wrapper">
-                <label class="register__label" for="email">Email</label>
-                <input type="email" id="email" class="register__input-feild">
+                <label class="register__label" for="email" [ngClass]="{'alert-danger': email.errors && (email.dirty || email.touched)}">Email</label>
+                <input type="email" id="email" class="register__input-feild" name="email" #email="ngModel" required [(ngModel)]="registerFrom.email" pattern="[a-zA-Z0-9]*@[a-zA-Z0-9]{2,7}.{2,7}" [ngClass]="{'alert-danger__border': email.errors && (email.dirty || email.touched)}">
+                <div class="alert alert-danger">
+                    <div *ngIf="email.errors?.['required'] && (email.dirty || email.touched)">
+                        User name is required
+                    </div>
+                    <div *ngIf="email.errors?.['pattern'] && (email.dirty || email.touched)">
+                        Enter a valid email id
+                    </div>
+                </div> 
             </div>
             <div class="register__wrapper">
-                <label class="register__label" for="name">Name</label>
-                <input type="text" id="name" class="register__input-feild">
+                <label class="register__label" for="name" [ngClass]="{'alert-danger': name.errors && (name.dirty || name.touched)}">Name</label>
+                <input type="text" id="name" class="register__input-feild" name="name" #name="ngModel" required [(ngModel)]="registerFrom.name" minlength="4" [ngClass]="{'alert-danger__border': name.errors && (name.dirty || name.touched)}">
+                <div class="alert alert-danger">
+                    <div *ngIf="name.errors?.['required'] && (name.dirty || name.touched)">
+                        Name is required
+                    </div>
+                    <div *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)">
+                        Minimum length should be 4
+                    </div>
+                </div> 
             </div>
             <div class="register__wrapper">
                 <label class="register__label" for="surname">Surname</label>
-                <input type="text" id="surname" class="register__input-feild">
+                <input type="text" id="surname" class="register__input-feild" name="surName"  required 
+                [(ngModel)]="registerFrom.surName">
             </div>
             <div class="register__wrapper">
-                <label class="register__label" for="user-name">User Name</label>
-                <input type="text" id="user-name" class="register__input-feild">
+                <label class="register__label" for="user-name" [ngClass]="{'alert-danger': userName.errors && (userName.dirty || userName.touched)}">User Name</label>
+                <input type="text" id="user-name" class="register__input-feild" #userName="ngModel" name="userName" (keypress)="validateUserName()" required [(ngModel)]="registerFrom.userName" minlength="4" [ngClass]="{'alert-danger__border': userName.errors && (userName.dirty || userName.touched)}">
+                <div class="alert alert-danger" [ngClass]="{'alert-danger__border': userName.errors && (userName.dirty || userName.touched)}">
+                    <div *ngIf="userName.errors?.['required'] && (userName.dirty || userName.touched)">
+                        User name is required
+                    </div>
+                    <div *ngIf="userName.errors?.['minlength'] && (userName.dirty || userName.touched)">
+                        Minimum length should be 4
+                    </div>
+                </div> 
             </div>
             <div class="register__wrapper">
-                <label class="register__label" for="password">Password</label>
-                <input type="password" id="password" class="register__input-feild">
+                <label class="register__label" for="password" [ngClass]="{'alert-danger': password.errors && (password.dirty || password.touched)}">Password</label>
+                <input type="password" id="password" class="register__input-feild" #password="ngModel" name="password" required [(ngModel)]="registerFrom.password" minlength="8" [ngClass]="{'alert-danger__border': password.errors && (password.dirty || password.touched)}">
+                <div class="alert alert-danger">
+                    <div *ngIf="password.errors?.['required'] && (password.dirty || password.touched)">
+                        Password is required
+                    </div>
+                    <div *ngIf="password.errors?.['minlength'] && (password.dirty || password.touched)">
+                        Password length should be 8
+                    </div>
+                </div> 
             </div>
             <div class="register__wrapper">
                 <label class="register__label" for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" class="register__input-feild">
+                <input type="password" id="confirm-password" class="register__input-feild"  required >
             </div>
-            <button type="submit" class="btn register__btn" routerLink="/sidebar/dashboard">Submit</button>
+            <button type="submit" class="btn register__btn" [disabled]="form?.invalid">Submit</button>
             <div class="register__other-ways">
                 <p class="register__reset">Forgot your password? <a href="#" class="register__reset-link link"> Reset it.</a></p>
                 <p class="login__register">Alredy have an account? Log In? <a routerLink="login" class="login__register-link link" routerLink="/login">Login now!</a></p>

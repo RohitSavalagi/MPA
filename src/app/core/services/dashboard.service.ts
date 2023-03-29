@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Dashboard } from "@core/models/dashboard.model";
 
@@ -88,7 +89,7 @@ export class DashboardService {
         },
     ];
 
-    constructor() {}
+    constructor(private http: HttpClient) {}
 
     getData(): Dashboard[] {
         return this.data;
