@@ -1,10 +1,14 @@
 import { DOCUMENT } from "@angular/common";
+import { HttpClient } from "@angular/common/http";
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     Inject,
+    OnInit,
 } from "@angular/core";
 import { Contracts } from "@core/models/contracts.model";
+import { ContractsService } from "@core/services/contracts.service";
 
 @Component({
     selector: "oe-contracts",
@@ -12,43 +16,25 @@ import { Contracts } from "@core/models/contracts.model";
     styleUrls: ["./contracts.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContractsComponent {
+export class ContractsComponent implements OnInit{
 
-    contracts: Contracts[] = [
-        {
-            title: "Deutsche Bundespost. Apple products monthly discount",
-            status: "signed",
-            company: "Deutsche Bundespost",
-            location: "Germany, Berlin, Rathausstraße 5",
-            contract: "Show conditions",
-            assignee: "Haydn Schäfer",
-            handler: "Aldrich Vogel",
-            avatar: "./../../../assets/images/icons/Avatar Profile.png",
-        },
-        {
-            title: "Deutsche Bundespost. Apple products monthly discount",
-            status: "building",
-            company: "Deutsche Bundespost",
-            location: "Germany, Berlin, Rathausstraße 5",
-            contract: "Show conditions",
-            assignee: "Haydn Schäfer",
-            handler: "Aldrich Vogel",
-            avatar: "./../../../assets/images/icons/Avatar Profile.png",
-        },
-        {
-            title: "Deutsche Bundespost. Apple products monthly discount",
-            status: "signed",
-            company: "Deutsche Bundespost",
-            location: "Germany, Berlin, Rathausstraße 5",
-            contract: "Show conditions",
-            assignee: "Haydn Schäfer",
-            handler: "Aldrich Vogel",
-            avatar: "./../../../assets/images/icons/Avatar Profile.png",
-        },
-    ];
+    contracts: Contracts[] = [];
 
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(
+        @Inject(DOCUMENT) private document: Document,
+        private http: HttpClient,
+        private ref: ChangeDetectorRef,
+        private contractSerice: ContractsService
+    ) {}
 
+    ngOnInit(): void {
+
+        this.contractSerice.getData().subscribe((res: Contracts[]) => {
+            this.contracts = res;
+            this.ref.detectChanges();
+        });
+
+    }
 
     openPopup(): void {
         this.document.querySelector<HTMLElement>(".popup")?.classList.add("popup--active");

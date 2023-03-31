@@ -67,8 +67,19 @@
                 </div> 
             </div>
             <div class="register__wrapper">
-                <label class="register__label" for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" class="register__input-feild"  required >
+                <label class="register__label" for="confirm-password" [ngClass]="{'alert-danger': confPassword.errors && (confPassword.dirty || confPassword.touched)}">Confirm Password</label>
+                <input type="password" id="confirm-password" class="register__input-feild"  required type="password" id="confPassword" class="register__input-feild" #confPassword="ngModel" name="confPassword" required [(ngModel)]="conPass" minlength="8" [ngClass]="{'alert-danger__border': confPassword.errors && (confPassword.dirty || confPassword.touched)}">
+                <div class="alert alert-danger">
+                    <div *ngIf="confPassword.errors?.['required'] && (confPassword.dirty || confPassword.touched)">
+                        Password is required
+                    </div>
+                    <div *ngIf="confPassword.errors?.['minlength'] && (confPassword.dirty || confPassword.touched)">
+                        Password length should be 8
+                    </div>
+                    <div *ngIf="!passMatch && submitted">
+                        Mis Match
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn register__btn" [disabled]="form?.invalid">Submit</button>
             <div class="register__other-ways">

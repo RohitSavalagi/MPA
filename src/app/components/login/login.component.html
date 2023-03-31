@@ -17,7 +17,7 @@
                     <label class="login__label" for="name" [ngClass]="{'alert-danger': (!pass && submitted) || (name.errors?.['required'] && name.touched)}">User Name</label>
                     <input type="text" id="name" class="login__input-feild" required name="name" [(ngModel)]="login.userName" #name="ngModel" [ngClass]="{'alert-danger__border': (!pass && submitted) || (name.errors?.['required'] && name.touched)}">
                     <div class="login__error error__user-not-found alert alert-danger" *ngIf="!pass && submitted">
-                        User with given username doesn’t exist
+                        User with given username doesn't exist
                     </div>
                     <div *ngIf="name.invalid && (name.dirty || name.touched)"
                         class="alert alert-danger">
@@ -30,11 +30,11 @@
                     <label 
                         class="login__label login__label--password"
                         for="password" 
-                        [ngClass]="{'alert-danger': (name.errors?.['required'] && (password?.dirty || password?.touched))}"
+                        [ngClass]="{'alert-danger': (password.errors?.['required'] && (password?.dirty || password?.touched))}"
                     >
                         Password
                     </label>
-                    <input type="password" id="password" class="login__input-feild" name="password" required [(ngModel)]="login.password" #password="ngModel" [ngClass]="{'alert-danger__border': (password.errors?.['required'] && password.touched)}">
+                    <input type="password" id="password" class="login__input-feild" name="password" required [(ngModel)]="login.password" #password="ngModel" [ngClass]="{'alert-danger__border': (!this.passMatch && submitted) || (password.errors?.['required'] && password.touched)}">
                     <div class="login__error error__password alert alert-danger">
 
                     </div>

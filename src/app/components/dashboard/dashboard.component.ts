@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit(): void {
 
-        this.http.get<Dashboard[]>("../../../assets/dashboard_tasks.json").subscribe((res: Dashboard[]) => {
+        this.http.get<Dashboard[]>("http://localhost:3000/dashboard").subscribe((res: Dashboard[]) => {
             this.initialData = res;
             this.data = res.slice(0, 2);
             this.dataExtraction();

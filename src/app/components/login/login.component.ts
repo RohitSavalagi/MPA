@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     userNameNotFound:  HTMLElement | null | undefined;
     passwordINCorrect:  HTMLElement | null | undefined;
     submitted: boolean = false;
+    passMatch: boolean = false;
 
     constructor(
         private getUser: UserService,
@@ -39,7 +40,6 @@ export class LoginComponent implements OnInit {
         this.pass = "";
         this.data.forEach((element: User) => {
             if (
-                
                 element.userName === this.login.userName
             ) {
                 this.pass = element.password;
@@ -47,7 +47,8 @@ export class LoginComponent implements OnInit {
         });
 
         if (this.pass) {
-            if (this.login.password === this.pass) {
+            this.passMatch = this.login.password === this.pass; 
+            if (this.passMatch) {
                 void this.router.navigateByUrl("sidebar/dashboard");
             } else {
                 if(this.passwordINCorrect){

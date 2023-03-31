@@ -53,7 +53,8 @@
             ></oe-icon>
         </div>
     </div>
-    <div class="product__categories">
+    <div *ngIf="loader">Hi</div>
+    <div class="product__categories"  *ngIf="!loader">
       <a class="products__item-wrapper" *ngFor="let item of items">
         <img class="products__img" src="./../../../assets/images/icons/{{item.img}}" alt="image">
         <h1>{{item.category}}</h1>

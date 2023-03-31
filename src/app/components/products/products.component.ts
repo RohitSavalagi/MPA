@@ -4,6 +4,7 @@ import {
     Component,
     OnInit,
     Inject,
+    ChangeDetectorRef,
 } from "@angular/core";
 import { Product } from "@core/models/product.model";
 import { ProductsService } from "@core/services/products.service";
@@ -20,21 +21,44 @@ export class ProductsComponent implements OnInit {
     cardCount: number = 0;
     offset: number = 0;
     maxX!: number;
-    items!: Product[];
+    items: Partial<Product[]> | undefined;
+    loader!: boolean;
 
     constructor(
         private productsService: ProductsService,
-        @Inject(DOCUMENT) private document: Document
+        @Inject(DOCUMENT) private document: Document,
+        private ref: ChangeDetectorRef
     ) {}
 
     ngOnInit(): void {
-        this.items = this.productsService.getData();
+        this.loader = true;
+        this.productsService.getData().subscribe(
+            (res: Product[]) => {
+                this.items = res;
+                this.loader = false;
+                this.ref.detectChanges();
+            },
+            () => {
+                
+            },
+            () => {
+                this.loader = false;
+            }
+        );
+
+        // this.productsService.getData().subscribe({
+        //     next: (res: Product[]) => (this.items = res),
+        //     error: (error: Error) => console.log(error),
+        //     complete: () => (this.loader = false),
+        // });
+
         this.carousel = this.document.querySelector<HTMLElement>(
             "[data-target='carousel']"
         );
-        this.carouselWidth = this.document.querySelector<HTMLElement>(
-            "[data-target='carousel']"
-        )?.offsetWidth ?? 0;
+
+        this.carouselWidth =
+            this.document.querySelector<HTMLElement>("[data-target='carousel']")
+                ?.offsetWidth ?? 0;
         this.cardCount =
             this.carousel?.querySelectorAll("[data-target='card']")?.length ??
             0;

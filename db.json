@@ -1,0 +1,302 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "name": "Rohit",
+      "surName": "Sharma",
+      "email": "rohit@gmail.com",
+      "userName": "rosh",
+      "password": "45"
+    },
+    {
+      "id": 1,
+      "name": "Virat",
+      "surName": "Kohli",
+      "email": "virat@gmail.com",
+      "userName": "viko",
+      "password": "18"
+    },
+    {
+      "id": 3,
+      "name": "Mahendra",
+      "surName": "Dhoni",
+      "email": "dhoni@gmail.com",
+      "userName": "msdh",
+      "password": "7"
+    },
+    {
+      "name": "Rohit",
+      "surName": "Savalagi",
+      "email": "rohitsavalagi70@gmail.com",
+      "userName": "rosa",
+      "password": "1111",
+      "id": 5
+    },
+    {
+      "name": "Bhole",
+      "surName": "Nath",
+      "email": "bholenath@gmail.com",
+      "userName": "rosa0922",
+      "password": "asdf",
+      "id": 10
+    },
+    {
+      "name": "asdf",
+      "surName": "asdf",
+      "email": "rohit@gmail.com",
+      "userName": "asdf",
+      "password": "asdf",
+      "id": 11
+    },
+    {
+      "name": "asdf",
+      "surName": "asdf",
+      "email": "rohit70@gmail.com",
+      "userName": "vasdfasdf",
+      "password": "asdfasdf",
+      "id": 12
+    },
+    {
+      "userName": "rosa",
+      "password": "Rohit@123",
+      "email": "rohitsavalagi710@gmail.com",
+      "name": "Rohit",
+      "surName": "Savalagi",
+      "id": 13
+    },
+    {
+      "userName": "jathi",
+      "password": "jathinlalam",
+      "email": "jathin@gmail",
+      "name": "jathin",
+      "surName": "lalam",
+      "id": 14
+    },
+    {
+      "userName": "ruby",
+      "password": "123123123",
+      "email": "rober@gmail.com",
+      "name": "Robert",
+      "surName": "JR",
+      "id": 15
+    }
+  ],
+  "dashboard": [
+    {
+      "id": 1,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 2,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "completed",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 3,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 4,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 5,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 6,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 7,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "completed",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 8,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 9,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "progress",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    },
+    {
+      "id": 10,
+      "name": "Aldrich Vogel",
+      "task": "Berlin University iPad Pro 2020",
+      "location": "Germany, Berlin, Kaiserswerther Str. 16-18,",
+      "status": "completed",
+      "items": 25,
+      "photo": "img/image 3.svg"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Berlin University iPad Pro 2020 (25 items)",
+      "status": "completed",
+      "duedate": "August 17, 2021",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "items": [
+        "x12 iPad Pro 2020",
+        " x12 Extended Apple Warranty (5 years)"
+      ],
+      "avatar": "./../../../assets/images/icons/image 3.svg",
+      "handler": "Aldrich Vogel"
+    },
+    {
+      "id": 2,
+      "title": "Berlin University iPad Pro 2020 (25 items)",
+      "status": "cancelled",
+      "duedate": "August 17, 2021",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "items": [
+        "x12 iPad Pro 2020",
+        " x12 Extended Apple Warranty (5 years)",
+        "Delivery"
+      ],
+      "avatar": "./../../../assets/images/icons/image 3.svg",
+      "handler": "Aldrich Vogel"
+    },
+    {
+      "id": 2,
+      "title": "Berlin University iPad Pro 2020 (25 items)",
+      "status": "cancelled",
+      "duedate": "August 17, 2021",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "items": [
+        "x12 iPad Pro 2020",
+        " x12 Extended Apple Warranty (5 years)",
+        "Delivery"
+      ],
+      "avatar": "./../../../assets/images/icons/image 3.svg",
+      "handler": "Aldrich Vogel"
+    }
+  ],
+  "products": [
+    {
+      "category": "Smartphones",
+      "img": "iPhone_12.png"
+    },
+    {
+      "category": "Laptops",
+      "img": "laptop.svg"
+    },
+    {
+      "category": "Smart Watches",
+      "img": "smart_watch.png"
+    },
+    {
+      "category": "Tablets",
+      "img": "Tablets.png"
+    },
+    {
+      "category": "PCs",
+      "img": "PCs.png"
+    },
+    {
+      "category": "Keyboards",
+      "img": "Keyboards.png"
+    },
+    {
+      "category": "Mice",
+      "img": "Mice.png"
+    },
+    {
+      "category": "Monitors",
+      "img": "Monitors.png"
+    }
+  ],
+  "contracts": [
+    {
+      "title": "Deutsche Bundespost. Apple products monthly discount",
+      "status": "signed",
+      "company": "Deutsche Bundespost",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "contract": "Show conditions",
+      "assignee": "Haydn Schäfer",
+      "handler": "Aldrich Vogel",
+      "avatar": "./../../../assets/images/icons/Avatar Profile.png"
+    },
+    {
+      "title": "Deutsche Bundespost. Apple products monthly discount",
+      "status": "building",
+      "company": "Deutsche Bundespost",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "contract": "Show conditions",
+      "assignee": "Haydn Schäfer",
+      "handler": "Aldrich Vogel",
+      "avatar": "./../../../assets/images/icons/Avatar Profile.png"
+    },
+    {
+      "title": "Deutsche Bundespost. Apple products monthly discount",
+      "status": "signed",
+      "company": "Deutsche Bundespost",
+      "location": "Germany, Berlin, Rathausstraße 5",
+      "contract": "Show conditions",
+      "assignee": "Haydn Schäfer",
+      "handler": "Aldrich Vogel",
+      "avatar": "./../../../assets/images/icons/Avatar Profile.png"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "Anthor": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

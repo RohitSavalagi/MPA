@@ -18,6 +18,9 @@ export class RegistrationComponent implements OnInit{
     data!: User[];
     emailExisit!: boolean;
     registerFrom!: Register;
+    conPass!: string;
+    passMatch!: boolean;
+    submitted: boolean = false;
     
     constructor(
         private post: UserService,
@@ -32,26 +35,30 @@ export class RegistrationComponent implements OnInit{
     }
 
     onSubmit(): void{
-        this.emailExisit = false;
-        this.data.forEach((ele: User) => {
-            if(ele.email === this.registerFrom.email){
-                this.emailExisit = true;
-            }
-        });
-        if(this.emailExisit){
-            // eslint-disable-next-line no-undef
-            alert("This Email Already Exists");
-        } else{
-            this.post.addUser(this.registerFrom).subscribe(() => {
+        this.submitted = true;
+        this.passMatch = this.conPass === this.registerFrom.password;
+        if(this.passMatch){
+            this.emailExisit = false;
+            this.data.forEach((ele: User) => {
+                if(ele.email === this.registerFrom.email){
+                    this.emailExisit = true;
+                }
             });
-            void this.router.navigateByUrl("sidebar/dashboard");
+            if(this.emailExisit){
+                // eslint-disable-next-line no-undef
+                alert("This Email Already Exists");
+            } else{
+                this.post.addUser(this.registerFrom).subscribe(() => {
+                });
+                void this.router.navigateByUrl("login");
+            }
+            
         }
     }
-    
+        
     validateUserName(): void{
     //    if(this.loginForm?.value.userName === this.data[0].userName){
     //     alert("UserName")
     //    }
     }
-
 }
